@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 import pickle
+import shap
+import matplotlib.pyplot as plt
 
 
 # EDA
@@ -51,6 +53,28 @@ def impute_cols(x_train: pd.DataFrame, x_test: pd.DataFrame, cols: list, imputat
     test[cols].fillna(imputation, inplace=True)
 
     return train, test
+
+
+# Plotting
+def plot_shap_summary(
+    shap_list, data, title_loc: str = None, title: str = None, class_names: list = None
+):
+    """Plot shaply values, either a stacked barplot for all tiers
+    or the summary plot for a specific class
+
+    Args:
+        shap_list (list): list of shap values for each feature,
+            derived from shap.TreeExplainer(model.best_estimator_).shap_values(data)
+        data (pd.DataFrame): test data used to determine shap values
+        title_loc (str, optional): string for location of title, either "left", "center", or "right.
+            Defaults to None.
+        title (str, optional): title for graph. Defaults to None.
+        class_names (list, optional): list of names for each class. Defaults to None.
+    """
+    shap.summary_plot(shap_list, data, show=False, class_names=class_names)
+    plt.title(title, loc=title_loc, size=20)
+    plt.yticks(rotation=0)
+    plt.show()
 
 
 # Pickle functions
