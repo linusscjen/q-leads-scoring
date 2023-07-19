@@ -23,3 +23,11 @@ Key variables include `Tags`, `Total Time Spent on Website`, `Last Notable Activ
 TODO:
 
 A PDF version of our Powerpoint can be found here in the repo under ________.
+
+## Limitations
+
+Things I skipped:
+
+- trying different models
+- playing with the threshold probability
+- hyperparameter tuning
