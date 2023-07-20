@@ -20,9 +20,7 @@ Key variables include `Tags`, `Total Time Spent on Website`, `Last Notable Activ
 
 ## Presentation
 
-TODO:
-
-A PDF version of our Powerpoint can be found here in the repo under ________.
+All presentation information can be found under `presentation/Leads Summary.<pptx|pdf>`.
 
 ## Limitations
 
